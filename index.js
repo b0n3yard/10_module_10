@@ -1,8 +1,6 @@
 const fs = require('fs')
 const inquirer = require('./node_modules/inquirer')
 const {triangle, circle, square} = require('./lib/shapes')
-// import { prompt } from 'inquirer';
-// import inquirer from 'inquirer';
 const svgobj = {
 
 }
@@ -31,7 +29,7 @@ function backcolor(){
     }).then((e)=>{
       
         svgobj.bgcolor = e.bgcolor;
-        // `<polygon points="100,24 50,200 150,200" class="triangle" fill = "${e.bgcolor}"/> `  ;
+        
         mainmenu()
         
     })
@@ -50,7 +48,7 @@ function txtcolors(){
     })
 }
 function Show(){
-        // console.log(svgobj)
+        
         inquirer.prompt({
 
             name: 'shape',
@@ -58,43 +56,33 @@ function Show(){
             type: 'list',
             choices:['square','circle','triangle']
         }).then((e) =>{
+                let logo1 = ""
             switch(e.shape){
                 case 'square':
                     console.log('square')
-                    const sqre1 = new square(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
-                    const svg = sqre1.render()
-                    fs.writeFile('square.svg',svg, (err) =>{
-                        if(err) throw err;  
-                        console.log('svg generated')
-                    });
+                    logo1 = new square(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
                     break;
                 case 'circle':
                     console.log('circle')
-                    const crcl1 = new circle(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
-                    const svg2 = crcl1.render()
-                    fs.writeFile('circle.svg',svg2, (err) =>{
-                        if(err) throw err;  
-                        console.log('svg generated')
-                    });
+                    logo1 = new circle(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
                     break;
                 case 'triangle':
-                    const trngle1 = new triangle(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
-                    const svg3 = trngle1.render()
-                    console.log(svg3)
-                    fs.writeFile('triangle.svg',svg3, (err) =>{
-                        if(err) throw err;  
-                        console.log('svg generated')
-                    });
+                    logo1 = new triangle(svgobj.bgcolor, svgobj.txtclr,svgobj.title)
                     break;
 
 
             }
+            const svg = logo1.render()
+            fs.writeFile('logo.svg',svg, (err) =>{
+            if(err) throw err;  
+            console.log('svg generated')
+            });
 
 
         })
        
     
-        // console.log(sqre1)
+        
 }
 
 function mainmenu(){
@@ -124,5 +112,4 @@ function mainmenu(){
     })
 }
 mainmenu()
-// backcolor()
-// test()
+
