@@ -7,18 +7,17 @@
 - [Questions](#questioning)
 - [License](#license)
 # Description
-this was interesting. a solid foundation for what comes next
+creating the menu was fun, using the instanced classes in such a way was dizzying but satisfying.
 # installation
 to install this project
 - first pull the repo from github, 
 - run the included script in the console "npm run setup" 
-- 
 # usage  
 
-<!-- <video width='320' height = '240' controls>
-        <source src = './samplereadme.mp4' type = 'video/mp4'>
+<video width='320' height = '240' controls>
+        <source src = './logo.mp4' type = 'video/mp4'>
     </video>
-    <br> -->
+    <br>
 
 - once installed you can initiate the program by running "npm start" or test the program by running "npm test"
 # Credits

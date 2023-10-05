@@ -7,7 +7,7 @@ const svgobj = {
 function test(){
     inquirer.prompt({
         name:'running',
-        message: 'is this working?'
+        message: 'Type up to 3 letters'
     }).then((e)=>{
         if (e.running.length > 3){
             console.log('too many letters, try agin')
